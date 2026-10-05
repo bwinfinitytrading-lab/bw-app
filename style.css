@@ -20,7 +20,8 @@ body.install #wait, body.install iframe { display:none; }
 .btn { display:inline-block; border:0; padding:14px 26px; border-radius:14px; background:var(--acc); color:#fff; font:700 17px/1.2 inherit; font-family:inherit; text-decoration:none; cursor:pointer; }
 .steps { display:none; text-align:left; background:var(--card); border:1px solid var(--line); border-radius:14px; padding:14px 18px; max-width:330px; }
 .steps ol { margin:0; padding-left:20px; } .steps li { margin:6px 0; }
-body.ios .steps.ios, body.show-steps.android .steps.android { display:block; }
+body.ios .steps.ios, body.show-steps.android .steps.android, body.show-steps.desktop .steps.desktop { display:block; }
+.warn { display:none; color:#f5b04c; font-size:13.5px; max-width:330px; } body.desktop .warn { display:block; }
 body.ios #inst { display:none; }
 body.installed #inst { display:none; }
 .ok { display:none; color:#5fd38d; font-weight:700; } body.installed .ok { display:block; }

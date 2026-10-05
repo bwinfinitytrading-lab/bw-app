@@ -12,6 +12,7 @@
 
   var standalone = (window.matchMedia && matchMedia('(display-mode: standalone)').matches) || navigator.standalone === true;
   var ios = /iphone|ipad|ipod/i.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  var mobile = ios || /android|mobile/i.test(navigator.userAgent);
   var prompt = null;
   window.addEventListener('beforeinstallprompt', function (e) { e.preventDefault(); prompt = e; b.classList.add('can-install'); });
   window.addEventListener('appinstalled', function () { b.classList.add('installed'); });
@@ -35,5 +36,5 @@
   }
 
   if (standalone) start();
-  else b.className = 'install' + (ios ? ' ios' : ' android');
+  else b.className = 'install' + (ios ? ' ios' : mobile ? ' android' : ' desktop');
 })();
